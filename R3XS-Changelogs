@@ -1,0 +1,232 @@
+v2.0 (12/08/2023)
+- Updated emulationstation to add Update Games List option to gamelist menu
+- Updated emulationstation to add the ability to sort systems alphabetically (Thanks to Froist for adding this capability)
+- Updated emulationstation to not show hidden folders and their content in system folders (Thanks to Manfred282 for the request and testing)
+- Updated emulationstation to not show DLC content for PSP (Thanks to Manfred282 for the request and testing)
+- Updated emulationstation to add the ability to scan the ports folder on boot or not (Thanks to Metrograde for reporting the m8 headless project issue and testing)
+- Updated buttonmon.sh to add support for detecting X, Y, L1, L2, R1, and R2 buttons
+- Updated Quick Mode to add the ability to delete a corrupted auto save state by holding R1 while booting into a quick mode game
+- Updated osk and msgbox to default to Lat7-TerminusBold20x10 console font if a odroid go 2 input is found for any reason
+- Updated keys.gptk in /opt/inttools to set L1 and R1 to Page Up and Page Down respectively
+- Updated NetworkManager to 1.44.2
+- Updated wpa_supplicant.service to make use of wpa_supplicant.conf file
+- Updated Wifi setup script to fix console font
+- Updated 8821cs.conf file
+- Fixed restore default settings scripts for GZdoom and LZdoom (Thanks to Wilderness for reporting the issue)
+- Added solution to automatically restore audio on reboot if /home/ark/.asoundrc file is missing or empty to address potential no audio issues
+- Added Sameboy retroarch emulator for Game Boy and Game Boy color
+- Added wpa_supplicant.conf to allow wpa_cli to scan for networks
+- Added Backup and Restore ArkOS settings options to BaRT
+- Added Adhoc Netplay support for retroarch and retroarch32
+ - Just hold the X button after launching a retroarch or retroarch32 based game from Emulationstation then pick host or client mode
+   See the FAQ available from the ArkOS wiki (http://arkos.hopto.me) for your unit for more info on this feature.
+- Added Game Share feature for retroarch and retroarch32 from the Adhoc Netplay session menu
+  See the FAQ available from the ArkOS wiki (http://arkos.hopto.me) for your unit for more info on this feature.
+
+v2.0 (12/15/2023)
+- Added enterprise 64/128 and videoton tvc emulator (Thanks to slaminger for the suggestion)
+- Added enterprise 64/128 and videoton tvc images to nes-box theme (Thanks to Jetup13 for the theme update)
+- Fixed emulationstation not showing folders that contain a period in the name but is not at the beginning of the folder name (Thanks to kane159 for reporting the issue)
+- Fixed plymouth ArkOS version changing font during boot up
+
+v2.0 (12/22/2023)
+- Updated emulationstation to include performance governor control settings per system and per game
+- Updated emulationstation to fix the games counter including hidden games in the count (Thanks to EnsignRutherford for reporting the issue and confirming the fix)
+- Updated perfmax scripts to support performance governor control settings from emulationstation
+- Updated quickmode scripts to accomodate governor control changes and BaRT
+
+v2.0 (01/27/2024)
+- Updated ArkOS Browser by filebrowser to version 2.27.0
+- Updated Amiberry standalone to 5.6.5
+- Updated Wifi script to fix exit and relaunch screen corruption bug
+- Updated adhoc netplay script to fix exit and relaunch screen corruption bug
+- Updated emulationstation to fix an icon and locale language related problem and another minor cleanup for governors (Thanks to ljhmd0825 for the find and fix)
+- Updated scummvm.sh to support starting ScummVM games without needing drilling down into sub folders (Thanks to EnsignRutherford for the script update)
+- Updated scan for new games script for ScummVM to place the created .scummvm files into the root scummvm subfolder (Thanks to EnsignRutherford for the suggestion)
+- Updated solarus.sh to use a different symlink for saves to not inflate the count of games for the Solarus system in Emulationstation (Thanks to EnsignRutherford for reporting the issue)
+- Updated speak_bat_life.sh to speak the current performance governor if R2 is held down while initiating the speak battery life key combo or during the speaking of the current battery life.
+- Updated libretro scummvm.ini file to point to roms/bios/scummvm folder by default instead of to /home/ark/.config/retroarch/system
+- Updated Switch to SD2 script to update retroarch system location in scummvm.ini
+- Fixed governor setting for virtualjaguar system
+- Added Palm OS (Mu) emulator
+- Added Radioshack TRS-80 (CoCo3) support (Thanks to EnsignRutherford for the suggestion and setup)
+  - Thanks to Ciaran Anscomb for creating the XRoar emulator and responding to inquiries about the emulator.
+- Updated Nes-Box theme to add art for Radioshack TRS-80 (Thanks to EnsignRutherford)
+- Added uae4arm core option for Retroarch emulator in emulationstation
+- Added missing stark_surface_fill shader files for ScummVM Standalone (Thanks to eth3real for reporting the issue)
+- Added gui-icons.dat, residualvm.zip, shaders.dat and translations.dat for libretro scummvm
+- Added .chd and .CHD as supported extensions for PSP
+- Added .7z and .7Z as supported extensions for Nintendo DS
+- Added PPSSPP-2021 (standalone-2021) emulator build with fps patch
+  - May help with better performance on some psp games
+- Added ability to use the FN key for R35s units (Thanks to Aeolus and Hack Around for pointing to the solution)
+
+v2.0 (01/27/2024-1)
+- Fixed Switch to SD2 script for RG351V, RG351MP, and R35s units
+
+v2.0 (02/04/2024)
+- Added script that facilitates using both SD Cards for roms storage.
+	Go to Options -> Advanced -> Switch to SD2 for Roms, Run the script and wait for it to finish.
+	There should be a new item available at Options -> Advanced -> Read from SD1 and SD2 for Roms run it and it will restart Emulation Station and now show all roms from both cards.
+	(Thanks to: christianhaitian for pointing out how to do it and kc234567890 for making the initial config that makes this possible for all systems.)
+- Changed Update.sh to Update using ArkOS-R3XS-Updater instead of the main repo so users can just update using the script for future releases.
+
+v2.0 (02/06/2024)
+- Reapplied fix for mupen64plus standalone-rice.
+- Fixed key daemons for standalone emulators.
+
+v2.0 (02/23/2024)
+- Added Videopac support (Thanks to EnsignRutherford for the suggestion)
+- Added additional missing supported extensions for Commodore 8 bit systems (Thanks to vonmillhausen for the detailed research and list)
+- Added ipf support for Amiga (Thanks to gameforcecadet for the suggestion)
+- Added exit hotkey daemon for ECWolf standalone emulator (Thanks to EnsignRutherford for the suggestion)
+- Added Yabasanshiro as an additional selectable retroarch core for Sega Saturn (Thanks to mrplow for the suggestion)
+- Fixed standalone-duckstation script to allow holding the A button for creating per game custom settings for the standalone duckstation emulator
+- Fixed standalone-duckstation settings now being able to load with single sd card setups
+- Fixed mednafen movie recordings so they are saved to the movies folder (Thanks to kane159 for the report)
+- Fixed mednafen standalone controls (Thanks to AeolusUX for the report)
+- Removed edit metadata for options section (Thanks to dani7959 for reporting the issue)
+- Updated USB DAC control script
+- Updated PPSSPP standalone emulator to 1.17.1
+- Updated XRoar standalone emulator to 1.5.3
+- Updated Retroarch and Retroarch32 to 1.17
+- Updated retroarch and retroarch32 launch scripts to allow dosbox-pure and gpsp cores for local netplay
+- Updated launching of scripts for the Options section to show stderr and not just stdout (Thanks to SirNate0 for the suggestion)
+
+v2.0 (02/23/2024)
+-Added J2ME Support (Thanks to Joanilson and Jamerson)
+
+v2.0 (03/29/2024)
+- Updated n64.sh launch script to more broadly account for various devices
+- Updated singe.sh launch script to use an alternate sdl2 for singe (ALG) games (Thanks to MBRetrocade6894 for reporting the issue)
+- Updated Retroarch and Retroarch32 to 1.18(f549875)
+- Updated retroarch and retroarch32 audio and video filters
+- Updated XRoar standalone emulator to 1.5.5
+- Updated older PortMaster installs to address a possible update bug (Thanks to kloptops for this fix)
+- Removed RGB30 related items accidentally added from the 02232024 update
+- Added geolith libretro emulator for Neo Geo (Thanks to Slaminger for the suggestion)
+ - This emulator is more accurate than fbneo and fbalpha and allows the ability to load .neo rom files instead
+   of cumbersome arcade roms of a particular version
+- Added .neo and .NEO extension support for Neo Geo
+- Added DoubleCherryGB libretro emulator for GameBoy and GameBoy Color (Thanks to Slaminger for the suggestion)
+ - This emulator allows for emulating up to 4 or more GameBoy units
+- Added stella libretro emulator for Atari 2600 (Thanks to xkenx70 for the suggestion)
+- Added Apple2 support (Thanks to slayer666 for script and recommendation)
+
+v2.0 (03/30/2024)
+- Fixed missing saves and savestates issue from Retroarch and Retroarch32 1.18 update
+- Related to this commit which has now reverted: https://github.com/libretro/RetroArch/commit/338c9a4fe441899e98c95ab082e18ddb5f931e49
+- Fixed ppsspp 1.17.1 gui (Thanks to AmberElec for the patch)
+- Updated apple2.sh script to fix some minor issues (Thanks to Slayer366 for the fixes)
+- Reactivated imageshift function by christian. 
+	Copy all your logos into a BMPs (case sensitive) folder on your fat32 boot partition then it should change to a different logo on every boot.
+
+v2.0 (04/02/2024)
+- Hotfix for es_systems.cfg and dual sd card script.
+
+v2.0 (04/11/2024)
+- Added support for using GIF for Launch Images
+- Added ability to Change Time (Thanks to Rolen47) 
+ - Your device MUST NOT be connected to the internet for the time and date changes to stay because the time is automatically corrected when connected to the internet.
+- Further fixes to the es_systems.cfg and dual sd card script. (Re-adding of J2ME thanks for Joanilson for reminding me)
+- Changed "Change LED to Green" script to "Change LED to Blue".
+- Fixed Restore PPSSPP, GZdoom, LZdoom scripts to accomodate the R3XS.
+- Replaced kernel drivers for all wireless devices. (Thanks to AmberELEC)
+
+
+v2.0 (04/24/2024)
+- Added Libretro MESS as an additional emulator for Apple 2 (Thanks to Zomugoff and BCosmo for the suggestion)
+- Added input tester tool (Thanks to CavemanJoe for the suggestion) (Thanks to Michele Righi for SDL2-Controller-Tester)
+- Added inactivity auto suspend capability 
+ - Enable and set the timeout (in minutes) for auto suspend via the Start Menu>Advanced section.
+- Updated apple2.sh script to fix filenames with parentheses and braces (Thanks to BCosmo for the fixes)
+- Updated linapple to stop joystick log messages
+- Updated ScummVM Standalone to 2.8.1
+- Updated Mednafen standalone to 1.32.1
+- Updated Emulationstation to add the ability to adjust and disable auto suspend
+- Updated Emulationstation to change folder icon from star to right arrow to differentiate from favorited games (Thanks to lauren7ino for the suggestion)
+- Fixed ppsspp-2021 gui (Thanks to AmberElec for guidance)
+- Added es_systems.cfg.dual that has been deleted last update
+- Revert some wireless drivers that are working for ArkOS before
+
+v2.0 (05/24/2024)
+- Updated SDL to 2.0.30.3
+- Updated Mupen64plus Standalone
+- Updated Hypseus-singe to 2.11.2
+- Updated FileBrowser to version 2.30.0
+- Updated Emulationstation to correct some spelling issues (Thanks to lauren7ino for the find)
+- Updated gamecontrollerdb.txt for inttools
+- Updated Wifi.sh script to correct some issues
+- Fixed issue where the second SD card that is setup for use for JELOS and maybe ROCKNIX may have their contents deleted if used with ArkOS
+- Added ability to change game loading image to a scraped marquee, thumb or image if available for the game. (Thanks to leon for the idea)
+  - Just go to the Start>UI Settings>Game Loading Image and select default (for the default ArkOS loading image), marquee, image, or thumb option.
+  - Make sure Game Loading Image Mode is set to PIC
+- Added ability to use an alternate SDL2 version for Portmaster games
+  - Just use the Change Ports SDL tool located in the Options>Advanced section
+- Reverted Back to old wifi drivers from the last stable one.
+- ScummVM launch is being prevented from last update so setting it to executable to fix.
+- Re-installed freeglut for Yabasanshiro.
+- Revamped how gif images are used as launchimage according to latest arkos update and added ability to use mp4 as launch animation.
+	-Add the launch animations to /roms/launchimages/ folder as loading.gif and loading.mp4 respectively.
+
+v2.0 (06/27/2024)
+- Updated Retroarch and Retroarch32 to 1.19.1 (e51a316)
+- Updated Emulationstation to fix not being able to show content in a subfolder named Sports (Thanks to evanation for reporting the issue)
+- Updated ondemand cpu governor up_threshold and sampling_down_factor to 85 and 150 respectively to smooth out game play when using this governor (Thanks to chronoreverse for the tip)
+- Updated N64 to add support for 7z and zip files
+- Fixed being able to set a performance governor for Atari ST emulation
+- Fixed Retroarch and Retroarch32 missing reboot and shutdown options (Thanks to Swift Outlaw for reporting the issue)
+- Fixed ALG no longer launching since last update
+- Fixed Update Games Lists option returns to corrupt game list for fade transition (Thanks to Zomgugoff for reporting the issue and confirming the fix)
+- Added Ardens libretro core as an addittional core for Arduboy
+- Added Japanese translation for Emulationstation (Thanks to alhumbra for the translation)
+- Added the ability to hide extensions per system (Thanks to Batocera for the solution)
+  - While in a system, press the start button then go to UI Settings then go to Theme Configuration then File Extensions
+- Updated mupen64plus.ini file to latest.
+- Added the ability to use the dpad as analog sticks for mupen64plus
+- Added 5 new layouts for Drastic (Thanks to kane159 for making this possible)
+	- Only two layouts is allowed for the screen switcher so you have to select two layouts from 
+	  /roms/nds/bg/optional/ folder and put two on your /roms/nds/bg/ folder.
+	  
+v2.0 (07/04/2024)
+- Fixed Emulationstation slow loading when many ports are installed
+- Fixed game count when extensions are filtered
+- Added FBNeo xtreme amped libretro core for various arcade systems where libretro fbneo core is available (Thanks to KMFDManic for the modification and recommendation)
+  - May improve performance on rk3566 devices 
+    with certain CAVE games like Deathsmile and 
+    Mushihime-sama.  For Deathsmile, set
+    Blitter Delay to 128 in Core Options>Dip Switches.
+
+v2.0 (07/31/2024)
+- Updated French translation for Emulationstation (Thanks to chronoss09)
+- Updated Korean translation for Emulationstation (Thanks to ljhmd0825)
+- Updated Portuguese translation for Emulationstation (Thanks to lauren7ino)
+- Updated Spanish translation for Emulationstation (Thanks to AmadeusGraves)
+- Updated Emulationstation to fix Gamelist View Style option "video" not being translatable (Thanks to ljhmd0825 for the fix)
+- Added Sharp-Shimmerless-Shader for retroarch and retroarch32 (Thanks to Woohyun-Kang for creating this shader and providing permission to distribute it)(Thanks to Ganimoth for suggesting it for inclusion in ArkOS)
+- Added ChimeraSNES retroarch core for SNES (Thanks to cobaltgit for the suggestion)
+- Fixed Microvision emulation display being cut off (Thanks to ZoranLain for reporting this issue)
+
+v2.0 (08/23/2024)
+- Added piemu emulator for Aquaplus P/ECE emulation (Thanks to sakamoto-neko for the suggestion and AmberElec for the execution script)
+- Added emuscv libretro core emulator for Epoch Super Cassette Vision (Thanks to sakamoto-neko for the suggestion)
+- Added smsplus-gx libretro core for Sega Master System and Sega Game Gear
+- Added hatariB libretro core as an additional emulator for Atari ST (Thanks to Slayer366 for the suggestion)
+- Added etos192us.img GPL licensed bios file for hatarib libretro core.  (Thanks to EmuTOS)
+ - https://emutos.sourceforge.io/
+- Added minivmac libretro core for Apple Macintosh emulation (Thanks to 6800legacy for the suggestion)
+- Added Aquaplus P/ECE system to NES-Box theme(Thanks to Jetup13)
+- Added Super Cassette Vision system to NES-Box theme(Thanks to Jetup13)
+- Added support for .hdv and .HDV for Apple II (Thanks to AP2K94 for the suggestion)(Thanks to Slayer366 for guidance on adding support for this)
+ - Requires using Applewin standalone emulator
+- Updated singe.sh script to support game.commands file (Thanks to Rhikki for the suggestion) (Thanks to Dirtbagxon for the script modification)
+- Updated Fake-08 standalone emulator
+- Updated wifi script to add ability to set country for Wifi use
+ - May help improve wifi performance
+- Fixed Backup and Restore ArkOS settings function in BaRT
+- Fixed Restore Drastic script to accomodate the R3XS
+
+
+v2.0 (08/23/2024-1)
+- Fixed Wifi.sh Script Permissions impacted by changes in the last update.
+- Fixed Read from Both SD1 and SD2 for ROMS Script impacted by changes in the last update.
