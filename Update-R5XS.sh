@@ -1163,7 +1163,7 @@ if [ ! -f "/home/ark/.config/.update02092025" ]; then
 
 fi
 
-if [ ! -f "$UPDATE_DONE" ]; then
+if [ ! -f "/home/ark/.config/.update03302025" ]; then
 
 	printf "\nFix Favorites and Last Played not keeping updates between power on and power off of devices\nUpdate Kodi.sh\nUpdate Russian and add UK translations for ES\nAdd Swedish translations for ES\nUpdate Korean translations\nUpdate NetworkManager to 1.52.0\nFix missing RG503 native rumble support\nAdd retrorun and retrorun32 emulators\nAdd new update script\nAdd Dragon32 and Dragon64 emulation\nAdd Flycast standalone emulator\nUpdate gzdoom\n" | tee -a "$LOG_FILE"
 	sudo rm -rf /dev/shm/*
@@ -1303,37 +1303,7 @@ if [ ! -f "$UPDATE_DONE" ]; then
 	  cp -fv /opt/gzdoom/gzdoom.rk3326 /opt/gzdoom/gzdoom | tee -a "$LOG_FILE"
 	  sudo rm -fv /opt/gzdoom/gzdoom.* | tee -a "$LOG_FILE"
 	fi
-
-	#printf "\nInstall and link new SDL 2.0.3200.0 (aka SDL 2.0.32.0)\n" | tee -a "$LOG_FILE"
-	#if [ -f "/boot/rk3566.dtb" ] || [ -f "/boot/rk3566-OC.dtb" ]; then
-	  #sudo mv -f -v /home/ark/sdl2-64/libSDL2-2.0.so.0.3200.0.rk3566 /usr/lib/aarch64-linux-gnu/libSDL2-2.0.so.0.3200.0 | tee -a "$LOG_FILE"
-	  #sudo mv -f -v /home/ark/sdl2-32/libSDL2-2.0.so.0.3200.0.rk3566 /usr/lib/arm-linux-gnueabihf/libSDL2-2.0.so.0.3200.0 | tee -a "$LOG_FILE"
-	  #sudo rm -rfv /home/ark/sdl2-32 | tee -a "$LOG_FILE"
-	  #sudo rm -rfv /home/ark/sdl2-64 | tee -a "$LOG_FILE"
-	  #sudo ln -sfv /usr/lib/aarch64-linux-gnu/libSDL2.so /usr/lib/aarch64-linux-gnu/libSDL2-2.0.so.0 | tee -a "$LOG_FILE"
-	  #sudo ln -sfv /usr/lib/aarch64-linux-gnu/libSDL2-2.0.so.0.3200.0 /usr/lib/aarch64-linux-gnu/libSDL2.so | tee -a "$LOG_FILE"
-	  #sudo ln -sfv /usr/lib/arm-linux-gnueabihf/libSDL2.so /usr/lib/arm-linux-gnueabihf/libSDL2-2.0.so.0 | tee -a "$LOG_FILE"
-	  #sudo ln -sfv /usr/lib/arm-linux-gnueabihf/libSDL2-2.0.so.0.3200.0 /usr/lib/arm-linux-gnueabihf/libSDL2.so | tee -a "$LOG_FILE"
-	#elif [ -f "/boot/rk3326-rg351v-linux.dtb" ] || [ -f "/boot/rk3326-rg351mp-linux.dtb" ] || [ -f "/boot/rk3326-r33s-linux.dtb" ] || [ -f "/boot/rk3326-r35s-linux.dtb" ] || [ -f "/boot/rk3326-r36s-linux.dtb" ] || [ -f "/boot/rk3326-gameforce-linux.dtb" ]; then
-	  #sudo mv -f -v /home/ark/sdl2-64/libSDL2-2.0.so.0.3200.0.rk3326 /usr/lib/aarch64-linux-gnu/libSDL2-2.0.so.0.3200.0 | tee -a "$LOG_FILE"
-	  #sudo mv -f -v /home/ark/sdl2-32/libSDL2-2.0.so.0.3200.0.rk3326 /usr/lib/arm-linux-gnueabihf/libSDL2-2.0.so.0.3200.0 | tee -a "$LOG_FILE"
-	  #sudo rm -rfv /home/ark/sdl2-32 | tee -a "$LOG_FILE"
-	  #sudo rm -rfv /home/ark/sdl2-64 | tee -a "$LOG_FILE"
-	  #sudo ln -sfv /usr/lib/aarch64-linux-gnu/libSDL2.so /usr/lib/aarch64-linux-gnu/libSDL2-2.0.so.0 | tee -a "$LOG_FILE"
-	  #sudo ln -sfv /usr/lib/aarch64-linux-gnu/libSDL2-2.0.so.0.3200.0 /usr/lib/aarch64-linux-gnu/libSDL2.so | tee -a "$LOG_FILE"
-	  #sudo ln -sfv /usr/lib/arm-linux-gnueabihf/libSDL2.so /usr/lib/arm-linux-gnueabihf/libSDL2-2.0.so.0 | tee -a "$LOG_FILE"
-	  #sudo ln -sfv /usr/lib/arm-linux-gnueabihf/libSDL2-2.0.so.0.3200.0 /usr/lib/arm-linux-gnueabihf/libSDL2.so | tee -a "$LOG_FILE"
-	#else
-	  #sudo mv -f -v /home/ark/sdl2-64/libSDL2-2.0.so.0.3200.0.rotated /usr/lib/aarch64-linux-gnu/libSDL2-2.0.so.0.3200.0 | tee -a "$LOG_FILE"
-	  #sudo mv -f -v /home/ark/sdl2-32/libSDL2-2.0.so.0.3200.0.rotated /usr/lib/arm-linux-gnueabihf/libSDL2-2.0.so.0.3200.0 | tee -a "$LOG_FILE"
-	  #sudo rm -rfv /home/ark/sdl2-64 | tee -a "$LOG_FILE"
-	  #sudo rm -rfv /home/ark/sdl2-32 | tee -a "$LOG_FILE"
-	  #sudo ln -sfv /usr/lib/aarch64-linux-gnu/libSDL2.so /usr/lib/aarch64-linux-gnu/libSDL2-2.0.so.0 | tee -a "$LOG_FILE"
-	  #sudo ln -sfv /usr/lib/aarch64-linux-gnu/libSDL2-2.0.so.0.3200.0 /usr/lib/aarch64-linux-gnu/libSDL2.so | tee -a "$LOG_FILE"
-	  #sudo ln -sfv /usr/lib/arm-linux-gnueabihf/libSDL2.so /usr/lib/arm-linux-gnueabihf/libSDL2-2.0.so.0 | tee -a "$LOG_FILE"
-	  #sudo ln -sfv /usr/lib/arm-linux-gnueabihf/libSDL2-2.0.so.0.3200.0 /usr/lib/arm-linux-gnueabihf/libSDL2.so | tee -a "$LOG_FILE"
-	#fi
-
+	
 	printf "\nLet's update NetworkManager to 1.52.0\n" | tee -a "$LOG_FILE"
 	cd /home/ark/netman
 	sudo dpkg -i --force-all *.deb | tee -a "$LOG_FILE"
@@ -1346,7 +1316,220 @@ if [ ! -f "$UPDATE_DONE" ]; then
 	sudo sed -i "/title\=/c\title\=ArkOS 2.0 ($UPDATE_DATE)" /usr/share/plymouth/themes/text.plymouth
 	echo "$UPDATE_DATE" > /home/ark/.config/.VERSION
 
+	touch "/home/ark/.config/.update03302025"
+	fi
+	
+	if [ ! -f "/home/ark/.config/.update04302025" ]; then
+
+	printf "\nUpdate Retroarch and Retroarch32 to 1.21.0\nUpdate Wifi.sh and importwifi.sh to support wpa3\nUpdate wifi_importer service\n" | tee -a "$LOG_FILE"
+	sudo rm -rf /dev/shm/*
+	sudo wget -t 3 -T 60 --no-check-certificate "$LOCATION"/04302025/arkosupdate04302025.zip -O /dev/shm/arkosupdate04302025.zip -a "$LOG_FILE" || sudo rm -f /dev/shm/arkosupdate04302025.zip | tee -a "$LOG_FILE"
+	if [ -f "/dev/shm/arkosupdate04302025.zip" ]; then
+	  cp -v /etc/emulationstation/es_systems.cfg /etc/emulationstation/es_systems.cfg.update04302025.bak
+	  sudo unzip -X -o /dev/shm/arkosupdate04302025.zip -d / | tee -a "$LOG_FILE"
+	  sudo systemctl daemon-reload
+	  sudo rm -fv /dev/shm/arkosupdate04302025.zip | tee -a "$LOG_FILE"
+	else
+	  printf "\nThe update couldn't complete because the package did not download correctly.\nPlease retry the update again." | tee -a "$LOG_FILE"
+	  sudo rm -fv /dev/shm/arkosupdate04302025.z* | tee -a "$LOG_FILE"
+	  sleep 3
+	  echo $c_brightness > /sys/class/backlight/backlight/brightness
+	  exit 1
+	fi
+
+	printf "\nMake sure the correct version of retrorun and retrorun32 are copied on the device\n" | tee -a "$LOG_FILE"
+	if [ -f "/boot/rk3566.dtb" ] || [ -f "/boot/rk3566-OC.dtb" ]; then
+	  sudo rm -fv /usr/local/bin/retrorun-rk3326 | tee -a "$LOG_FILE"
+	  sudo rm -fv /usr/local/bin/retrorun32-rk3326 | tee -a "$LOG_FILE"
+	else
+	  sudo cp -fv /usr/local/bin/retrorun-rk3326 /usr/local/bin/retrorun | tee -a "$LOG_FILE"
+	  sudo cp -fv /usr/local/bin/retrorun32-rk3326 /usr/local/bin/retrorun32 | tee -a "$LOG_FILE"
+	  sudo chmod 777 /usr/local/bin/retrorun*
+	  sudo rm -fv /usr/local/bin/retrorun-rk3326 | tee -a "$LOG_FILE"
+	  sudo rm -fv /usr/local/bin/retrorun32-rk3326 | tee -a "$LOG_FILE"
+	fi
+
+	printf "\nCopy correct es_systems.cfg depending on chipset\n" | tee -a "$LOG_FILE"
+	if [ ! -f "/boot/rk3566.dtb" ] && [ ! -f "/boot/rk3566-OC.dtb" ]; then
+	  cp -fv /etc/emulationstation/es_systems.cfg.rk3326 /etc/emulationstation/es_systems.cfg | tee -a "$LOG_FILE"
+	else
+	  rm -fv /etc/emulationstation/es_systems.cfg.rk3326 | tee -a "$LOG_FILE"
+	fi
+
+	if test ! -z "$(cat /etc/fstab | grep roms2 | tr -d '\0')"
+	then
+ 	  printf "\nAccomodate for roms2 with new es_systems.cfg file...\n" | tee -a "$LOG_FILE"
+	  sed -i '/<path>\/roms\//s//<path>\/roms2\//g' /etc/emulationstation/es_systems.cfg
+	fi
+
+	printf "\nCopy correct Retroarches depending on device\n" | tee -a "$LOG_FILE"
+	if [ -f "/boot/rk3326-r33s-linux.dtb" ] || [ -f "/boot/rk3326-r35s-linux.dtb" ] || [ -f "/boot/rk3326-r36s-linux.dtb" ] || [ -f "/boot/rk3326-rg351v-linux.dtb" ] || [ -f "/boot/rk3326-rg351mp-linux.dtb" ] || [ -f "/boot/rk3326-gameforce-linux.dtb" ]; then
+	  cp -fv /opt/retroarch/bin/retroarch32.rk3326.unrot /opt/retroarch/bin/retroarch32 | tee -a "$LOG_FILE"
+	  cp -fv /opt/retroarch/bin/retroarch.rk3326.unrot /opt/retroarch/bin/retroarch | tee -a "$LOG_FILE"
+	  rm -fv /opt/retroarch/bin/retroarch.* | tee -a "$LOG_FILE"
+	  rm -fv /opt/retroarch/bin/retroarch32.* | tee -a "$LOG_FILE"
+	elif [ -f "/boot/rk3326-odroidgo2-linux.dtb" ] || [ -f "/boot/rk3326-odroidgo2-linux-v11.dtb" ] || [ -f "/boot/rk3326-odroidgo3-linux.dtb" ]; then
+	  cp -fv /opt/retroarch/bin/retroarch32.rk3326.rot /opt/retroarch/bin/retroarch32 | tee -a "$LOG_FILE"
+	  cp -fv /opt/retroarch/bin/retroarch.rk3326.rot /opt/retroarch/bin/retroarch | tee -a "$LOG_FILE"
+	  rm -fv /opt/retroarch/bin/retroarch.* | tee -a "$LOG_FILE"
+	  rm -fv /opt/retroarch/bin/retroarch32.* | tee -a "$LOG_FILE"
+	else
+	  rm -fv /opt/retroarch/bin/retroarch.* | tee -a "$LOG_FILE"
+	  rm -fv /opt/retroarch/bin/retroarch32.* | tee -a "$LOG_FILE"
+	fi
+	chmod 777 /opt/retroarch/bin/*
+
+	printf "\nCopy correct emulationstation depending on device\n" | tee -a "$LOG_FILE"
+	if [ -f "/boot/rk3326-r33s-linux.dtb" ] || [ -f "/boot/rk3326-r35s-linux.dtb" ] || [ -f "/boot/rk3326-r36s-linux.dtb" ] || [ -f "/boot/rk3326-rg351v-linux.dtb" ] || [ -f "/boot/rk3326-rg351mp-linux.dtb" ] || [ -f "/boot/rk3326-gameforce-linux.dtb" ] || [ -f "/boot/rk3326-batlexp-linux.dtb" ]; then
+	  sudo mv -fv /home/ark/emulationstation.351v /usr/bin/emulationstation/emulationstation | tee -a "$LOG_FILE"
+	  sudo rm -fv /home/ark/emulationstation.* | tee -a "$LOG_FILE"
+	  sudo chmod -v 777 /usr/bin/emulationstation/emulationstation* | tee -a "$LOG_FILE"
+	elif [ -f "/boot/rk3326-odroidgo2-linux.dtb" ] || [ -f "/boot/rk3326-odroidgo2-linux-v11.dtb" ] || [ -f "/boot/rk3326-odroidgo3-linux.dtb" ]; then
+	  test=$(stat -c %s "/usr/bin/emulationstation/emulationstation")
+	  if [ "$test" = "3416928" ]; then
+	    sudo cp -fv /home/ark/emulationstation.351v /usr/bin/emulationstation/emulationstation | tee -a "$LOG_FILE"
+	  elif [ -f "/home/ark/.config/.DEVICE" ]; then
+		sudo cp -fv /home/ark/emulationstation.rgb10max /usr/bin/emulationstation/emulationstation | tee -a "$LOG_FILE"
+	  else
+	    sudo cp -fv /home/ark/emulationstation.header /usr/bin/emulationstation/emulationstation | tee -a "$LOG_FILE"
+	  fi
+	  if [ -f "/home/ark/.config/.DEVICE" ]; then
+	    sudo cp -fv /home/ark/emulationstation.rgb10max /usr/bin/emulationstation/emulationstation.header | tee -a "$LOG_FILE"
+	  else
+	    sudo cp -fv /home/ark/emulationstation.header /usr/bin/emulationstation/emulationstation.header | tee -a "$LOG_FILE"
+	  fi
+	  sudo cp -fv /home/ark/emulationstation.351v /usr/bin/emulationstation/emulationstation.fullscreen | tee -a "$LOG_FILE"
+	  sudo rm -fv /home/ark/emulationstation.* | tee -a "$LOG_FILE"
+	  sudo chmod -v 777 /usr/bin/emulationstation/emulationstation* | tee -a "$LOG_FILE"
+	elif [ -f "/boot/rk3566.dtb" ] || [ -f "/boot/rk3566-OC.dtb" ]; then
+	  sudo mv -fv /home/ark/emulationstation.503 /usr/bin/emulationstation/emulationstation | tee -a "$LOG_FILE"
+	  sudo rm -fv /home/ark/emulationstation.* | tee -a "$LOG_FILE"
+	  sudo chmod -v 777 /usr/bin/emulationstation/emulationstation* | tee -a "$LOG_FILE"
+	fi
+
+	printf "\nUpdate boot text to reflect current version of ArkOS\n" | tee -a "$LOG_FILE"
+	sudo sed -i "/title\=/c\title\=ArkOS 2.0 ($UPDATE_DATE)" /usr/share/plymouth/themes/text.plymouth
+	echo "$UPDATE_DATE" > /home/ark/.config/.VERSION
+
+	touch "/home/ark/.config/.update04302025"
+
+fi
+
+if [ ! -f "/home/ark/.config/.update05312025" ]; then
+
+	printf "\nUpdated ScummVM to version 2.9.1\nUpdated Hypseus-Singe 2.11.5\nUpdated Retrorun to version 2.7.7\n" | tee -a "$LOG_FILE"
+	sudo rm -rf /dev/shm/*
+	sudo wget -t 3 -T 60 --no-check-certificate "$LOCATION"/05312025/arkosupdate05312025.zip -O /dev/shm/arkosupdate05312025.zip -a "$LOG_FILE" || sudo rm -f /dev/shm/arkosupdate05312025.zip | tee -a "$LOG_FILE"
+	sudo wget -t 3 -T 60 --no-check-certificate "$LOCATION"/05312025/arkosupdate05312025.z01 -O /dev/shm/arkosupdate05312025.z01 -a "$LOG_FILE" || sudo rm -f /dev/shm/arkosupdate05312025.z01 | tee -a "$LOG_FILE"
+	if [ -f "/dev/shm/arkosupdate05312025.zip" ] && [ -f "/dev/shm/arkosupdate05312025.z01" ]; then
+	  zip -FF /dev/shm/arkosupdate05312025.zip --out /dev/shm/arkosupdate.zip -fz | tee -a "$LOG_FILE"
+	  sudo unzip -X -o /dev/shm/arkosupdate.zip -d / | tee -a "$LOG_FILE"
+	  sudo rm -fv /dev/shm/arkosupdate05312025.z* | tee -a "$LOG_FILE"
+	else
+	  printf "\nThe update couldn't complete because the package did not download correctly.\nPlease retry the update again." | tee -a "$LOG_FILE"
+	  sudo rm -fv /dev/shm/arkosupdate05312025.z* | tee -a "$LOG_FILE"
+	  sleep 3
+	  echo $c_brightness > /sys/class/backlight/backlight/brightness
+	  exit 1
+	fi
+
+	printf "\nCopy correct scummvm for device\n" | tee -a "$LOG_FILE"
+	if [ -f "/boot/rk3566.dtb" ] || [ -f "/boot/rk3566-OC.dtb" ]; then
+      rm -fv /opt/scummvm/scummvm.rk3326 | tee -a "$LOG_FILE"
+    else
+      mv -fv /opt/scummvm/scummvm.rk3326 /opt/scummvm/scummvm | tee -a "$LOG_FILE"
+	fi
+
+	printf "\nCopy correct Hypseus-Singe for device and mv hypinput.ini to hypinput_gamepad.ini\n" | tee -a "$LOG_FILE"
+	if [ -f "/boot/rk3566.dtb" ] || [ -f "/boot/rk3566-OC.dtb" ]; then
+      rm -fv /opt/hypseus-singe/hypseus-singe.rk3326 | tee -a "$LOG_FILE"
+    else
+      mv -fv /opt/hypseus-singe/hypseus-singe.rk3326 /opt/hypseus-singe/hypseus-singe | tee -a "$LOG_FILE"
+	fi
+	if [ -f "/opt/hypseus-singe/hypinput.ini" ]; then
+	  mv -fv /opt/hypseus-singe/hypinput.ini /opt/hypseus-singe/hypinput_gamepad.ini | tee -a "$LOG_FILE"
+	fi
+
+	printf "\nMake sure the correct version of retrorun and retrorun32 are copied on the device\n" | tee -a "$LOG_FILE"
+	if [ -f "/boot/rk3566.dtb" ] || [ -f "/boot/rk3566-OC.dtb" ]; then
+	  sudo rm -fv /usr/local/bin/retrorun-rk3326 | tee -a "$LOG_FILE"
+	  sudo rm -fv /usr/local/bin/retrorun32-rk3326 | tee -a "$LOG_FILE"
+	else
+	  sudo cp -fv /usr/local/bin/retrorun-rk3326 /usr/local/bin/retrorun | tee -a "$LOG_FILE"
+	  sudo cp -fv /usr/local/bin/retrorun32-rk3326 /usr/local/bin/retrorun32 | tee -a "$LOG_FILE"
+	  sudo chmod 777 /usr/local/bin/retrorun*
+	  sudo rm -fv /usr/local/bin/retrorun-rk3326 | tee -a "$LOG_FILE"
+	  sudo rm -fv /usr/local/bin/retrorun32-rk3326 | tee -a "$LOG_FILE"
+	fi
+
+	printf "\nUpdate boot text to reflect current version of ArkOS\n" | tee -a "$LOG_FILE"
+	sudo sed -i "/title\=/c\title\=ArkOS 2.0 ($UPDATE_DATE)" /usr/share/plymouth/themes/text.plymouth
+	echo "$UPDATE_DATE" > /home/ark/.config/.VERSION
+
+	touch "/home/ark/.config/.update05312025"
+
+fi
+
+if [ ! -f "/home/ark/.config/.update06302025" ]; then
+
+	printf "\nUpdate EasyRPG to 0.8.1.1\nUpdate liblcf to 0.8.1 for EasyRPG 0.8.1.1\nUpdate PPSSPP to 1.19.2\n" | tee -a "$LOG_FILE"
+	sudo rm -rf /dev/shm/*
+	sudo wget -t 3 -T 60 --no-check-certificate "$LOCATION"/06302025/arkosupdate06302025.zip -O /dev/shm/arkosupdate06302025.zip -a "$LOG_FILE" || sudo rm -f /dev/shm/arkosupdate06302025.zip | tee -a "$LOG_FILE"
+	if [ -f "/dev/shm/arkosupdate06302025.zip" ]; then
+	  cp -v /etc/emulationstation/es_systems.cfg /etc/emulationstation/es_systems.cfg.update06302025.bak
+	  sudo unzip -X -o /dev/shm/arkosupdate06302025.zip -d / | tee -a "$LOG_FILE"
+	  sudo rm -fv /dev/shm/arkosupdate06302025.zip | tee -a "$LOG_FILE"
+	else
+	  printf "\nThe update couldn't complete because the package did not download correctly.\nPlease retry the update again." | tee -a "$LOG_FILE"
+	  sudo rm -fv /dev/shm/arkosupdate06302025.z* | tee -a "$LOG_FILE"
+	  sleep 3
+	  echo $c_brightness > /sys/class/backlight/backlight/brightness
+	  exit 1
+	fi
+
+	printf "\nCopy correct PPSSPPSDL for device\n" | tee -a "$LOG_FILE"
+	if [ -f "/boot/rk3566.dtb" ] || [ -f "/boot/rk3566-OC.dtb" ]; then
+      rm -fv /opt/ppsspp/PPSSPPSDL.rk3326 | tee -a "$LOG_FILE"
+    else
+      mv -fv /opt/ppsspp/PPSSPPSDL.rk3326 /opt/ppsspp/PPSSPPSDL | tee -a "$LOG_FILE"
+	fi
+
+	if test -z "$(cat /etc/emulationstation/es_systems.cfg | grep 'bsnes' | tr -d '\0')"
+	then
+	  printf "\nAdd vbam and bsnes cores for Game Boy and Game boy color\n"
+	  sed -i '/<core>tgbdual<\/core>/c\\t\t\t\t\t<core>tgbdual<\/core>\n\t\t\t\t\t<core>vbam<\/core>\n\t\t\t\t\t<core>bsnes<\/core>' /etc/emulationstation/es_systems.cfg
+	fi
+
+	printf "\nUpdate boot text to reflect current version of ArkOS\n" | tee -a "$LOG_FILE"
+	sudo sed -i "/title\=/c\title\=ArkOS 2.0 ($UPDATE_DATE)" /usr/share/plymouth/themes/text.plymouth
+	echo "$UPDATE_DATE" > /home/ark/.config/.VERSION
+
+	touch "/home/ark/.config/.update06302025"
+
+fi
+
+if [ ! -f "$UPDATE_DONE" ]; then
+
+	printf "\nFix PPSSPP 1.19.2\nRevert EasyRPG back to 0.8\n" | tee -a "$LOG_FILE"
+	sudo rm -rf /dev/shm/*
+	sudo wget -t 3 -T 60 --no-check-certificate "$LOCATION"/06302025-1/arkosupdate06302025-1.zip -O /dev/shm/arkosupdate06302025-1.zip -a "$LOG_FILE" || sudo rm -f /dev/shm/arkosupdate06302025-1.zip | tee -a "$LOG_FILE"
+	if [ -f "/dev/shm/arkosupdate06302025-1.zip" ]; then
+	  sudo unzip -X -o /dev/shm/arkosupdate06302025-1.zip -d / | tee -a "$LOG_FILE"
+	  sudo rm -fv /dev/shm/arkosupdate06302025-1.zip | tee -a "$LOG_FILE"
+	else
+	  printf "\nThe update couldn't complete because the package did not download correctly.\nPlease retry the update again." | tee -a "$LOG_FILE"
+	  sudo rm -fv /dev/shm/arkosupdate06302025-1.z* | tee -a "$LOG_FILE"
+	  sleep 3
+	  echo $c_brightness > /sys/class/backlight/backlight/brightness
+	  exit 1
+	fi
+
+	printf "\nUpdate boot text to reflect current version of ArkOS\n" | tee -a "$LOG_FILE"
+	sudo sed -i "/title\=/c\title\=ArkOS 2.0 (06302025)-1" /usr/share/plymouth/themes/text.plymouth
+	echo "06302025" > /home/ark/.config/.VERSION
+
 	touch "$UPDATE_DONE"
+	
 	rm -v -- "$0" | tee -a "$LOG_FILE"
 	printf "\033c" >> /dev/tty1
 	msgbox "Updates have been completed.  System will now restart after you hit the A button to continue.  If the system doesn't restart after pressing A, just restart the system manually."
